@@ -18,13 +18,13 @@
     sudo apt-get install xclip
     xclip -sel clip < ~/.ssh/id_rsa.pub
 
-    the last line copies your public key to clipboard. REMEMBER to copy the .pub key and not the private key(id_rsa) (security)
+    the last line copies your public key to clipboard. REMEMBER to copy the .pub key and not the private key(id_rsa) (SECURITY)
 
 #D adding ssh-keys to github
 1. go to settings page on your repository in github
 2. click on "Deploy keys" (on left side of the page)
 3. click on "Add deploy key" (on right side of the page)
-4. Add a title to for your key
+4. Add a title for your key
 5. paste the copied key into the "key" textbox (just ctrl-v)
 6. tick the "Allow write access" box so that you can "push" or upload your work into the repository
 7. click "Add key"
@@ -39,4 +39,30 @@
  
 #F adding your first file to the repository
 # formula usually is add->commit->push
-1. 
+1. change to the directory of the cloned repository; for this tutorial suppose directory is "MyfirstRepo" so:
+    cd MyfirstRepo
+
+2. type:
+    echo "testing" > sample.txt
+
+    this will create a file called "sample.txt" with the word "testing" in it. this file is created locally. We will now upload or "push" this file to our repository on github
+
+3. firstly add the file to be pushed, type:
+    git add sample.txt
+
+    this loads the file to a holding area to be uploaded
+
+4. add comment about the changes made to the file using commit:
+    git commit -m "adding sample.txt to repository"
+
+    this helps as it logs the purpose of making some specific change to the code
+
+5. finally the upload/push:
+    git push -u origin master
+
+    origin here refers to the local machine, master being the remote repository(on github)
+
+and then we are done!
+
+#G Pulling code from master
+# to be continued
