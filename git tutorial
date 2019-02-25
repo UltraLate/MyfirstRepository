@@ -1,0 +1,42 @@
+#A Very rough guide to set up git 
+1. register a github account @ https://github.com/
+2. Verify your account with the email used during registraion
+3. then on the dashboard (https://github.com/dashboard) click on "create a repository"
+
+#B Setting up your first repository
+1. Name your new repository i.e. MyfirstRepository
+2. Set it to private
+
+#C Setting up ssh-keys
+1. open a command terminal (ctrl-alt-t)
+2. type:
+    ssh-keygen
+
+   this will create RSA encryption key in tow files "id_rsa" and "id_rsa.pub" for your machine
+
+3. install the xclip using the following:
+    sudo apt-get install xclip
+    xclip -sel clip < ~/.ssh/id_rsa.pub
+
+    the last line copies your public key to clipboard. REMEMBER to copy the .pub key and not the private key(id_rsa) (security)
+
+#D adding ssh-keys to github
+1. go to settings page on your repository in github
+2. click on "Deploy keys" (on left side of the page)
+3. click on "Add deploy key" (on right side of the page)
+4. Add a title to for your key
+5. paste the copied key into the "key" textbox (just ctrl-v)
+6. tick the "Allow write access" box so that you can "push" or upload your work into the repository
+7. click "Add key"
+
+#E using git clone to add github repository to local machine
+1. go back to main page of the repository
+2. click on the "ssh" button
+3. copy the repository address in the textbox 
+4. go to directory that you want to clone into i.e. cd ~/
+5. type:
+    git clone "copied-repository-address"
+ 
+#F adding your first file to the repository
+# formula usually is add->commit->push
+1. 
