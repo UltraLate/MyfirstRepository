@@ -60,7 +60,6 @@
 5. finally the upload/push:
     git push -u origin master
 
-    origin here refers to the local machine, master being the remote repository(on github)
 
 and then we are done!
 
